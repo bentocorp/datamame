@@ -1,0 +1,19 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>{{ title }}</title>
+</head>
+<body>
+    <h1>Upload File</h1>
+    <form action="/dashboard/upload" method="post" enctype="multipart/form-data" accept-charset="utf-8">
+        {% csrf_token %}
+        Onfleet Excel: <input type="file" name="onfleet" value="" /><br>
+        Stripe Excel: <input type="file" name="stripe" value="" /><br>
+        Download: <input type="text" name="download" value="" /><br>
+        Catering: <input type="text" name="catering" value="" /><br>
+        Catering Revenue: <input type="text" name="cateringRevenue" value="" /><br>
+        <button>Submit</button>
+    </form>
+</body>
+</html>

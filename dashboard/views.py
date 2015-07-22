@@ -33,7 +33,7 @@ def upload(request):
         workbook.close()
         output.seek(0)
         response = HttpResponse(output.read(), content_type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet")
-        response['Content-Disposition'] = "attachment; filename=result.xlsx"
+        response['Content-Disposition'] = "attachment; filename=test.xlsx"
     return response
     #return render_to_response('upload.html', {'a':new},content_type='xls')
 
@@ -42,7 +42,7 @@ def writeExcel(worksheet,dashboard):
         for j in range(0,len(dashboard[i])):
             temp = dashboard[i]
             if len(temp) !=0:
-                worksheet.write(len(temp)-j+1, i, temp[len(temp)-j-1])
+                worksheet.write(len(temp)-j+1, i, temp[len(dashboard[0])-j-1])
     return(worksheet)
 
 ##    

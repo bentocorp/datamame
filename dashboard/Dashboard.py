@@ -34,7 +34,6 @@ class Dashboard:
         for row in cursor:
             ordersRaw.append(row)
         cursor.close()
-        cnx.close()
         return(ordersRaw)
 
     #orderDetailsRaw data

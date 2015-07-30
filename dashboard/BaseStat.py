@@ -110,7 +110,7 @@ class BaseStat:
             meanDeliveryTime[i] = meanDeliveryTime[i]/len(myDict[allKey[i]])
         return(meanDeliveryTime)
 
-    #get mean delivery time
+    #get stripe report
     def getStripe(self,stripeRaw,weekPivot):
         for i in range(0,len(stripeRaw)):
             stripeRaw[i].append(datetime.datetime.utcfromtimestamp((stripeRaw[i][2] - 25569) * 86400.0))
@@ -176,6 +176,3 @@ class BaseStat:
 
 
 
-
-
-                

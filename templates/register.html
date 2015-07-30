@@ -14,6 +14,13 @@
         Catering: <input type="text" name="catering" value="" /><br>
         Catering Revenue: <input type="text" name="cateringRevenue" value="" /><br>
         <button>Submit</button>
+    </form> <br>
+
+    <form action="/dashboard/heatMapGPS" method="post" enctype="multipart/form-data" accept-charset="utf-8">
+        {% csrf_token %}
+        Heat Map GPS:
+        <button>Submit</button>
     </form>
+
 </body>
 </html>

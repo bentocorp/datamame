@@ -8,6 +8,7 @@ from xlsxwriter.workbook import Workbook
 import xlrd
 import xlwt
 from Dashboard import Dashboard
+from HeatMapGPS import HeatMapGPS
 #from django.views.decorators.csrf import csrf_exempt
 
 # Create your views here.
@@ -37,6 +38,10 @@ def upload(request):
     return response
     #return render_to_response('upload.html', {'a':new},content_type='xls')
 
+def heatMapGPS(request):
+    HeatMapGPS().drawMap()
+    return render(request, 'mymap.html', {'title': 'heat map'})
+    
 def writeExcel(worksheet,dashboard):
     for i in range(0,len(dashboard)):
         for j in range(0,len(dashboard[i])):

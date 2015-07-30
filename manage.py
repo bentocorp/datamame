@@ -3,8 +3,6 @@
 import os
 import sys
 
-PYTHONPATH=/usr/local/lib/python2.7/dist-packages
-
 if __name__ == "__main__":
     os.environ.setdefault("DJANGO_SETTINGS_MODULE", "mysite.settings")
 

@@ -45,6 +45,25 @@ def timeDiff(time):
         return 16
     elif (time.hour == 21) & (time.minute >= 30):
         return 17
+
+## calculate the 1 hour difference
+def timeDiffHour(time):
+    if time.hour == 11:
+        return 0
+    elif time.hour == 12:
+        return 1
+    elif time.hour == 13:
+        return 2
+    elif time.hour == 17:
+        return 3
+    elif time.hour == 18:
+        return 4
+    elif time.hour == 19:
+        return 5
+    elif time.hour == 20:
+        return 6
+    elif time.hour == 21:
+        return 7
     
 #create a dictionary
 #key is the 30 mins time period. value is the ordersRaw whole data
@@ -52,7 +71,7 @@ def createDictByHour(ordersRaw,column):
     myDict = {}
     timeColumn = BaseFunction().getColumn(ordersRaw,column)
     for i in range(0,len(ordersRaw)):
-        temp = timeDiff(timeColumn[i])
+        temp = timeDiffHour(timeColumn[i])
         if not temp in myDict:
             myDict[temp] = [ordersRaw[i]]
         else:

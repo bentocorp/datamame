@@ -23,18 +23,13 @@ class Dashboard:
     #sql part
     #import orders Raw data from MySql serve
     def readOrdersRaw(self):
-        cnx = database.bento
-        cursor = cnx.cursor()
-        cursor.execute("SELECT o.pk_Order, o.fk_User as 'Customer Id', concat(u.firstname, ' ', "
-                                "u.lastname) as 'Customer Name', u.email, o.created_at as order_created_at,"
-                        "o.street, o.city, o.state, o.zip, os.`status`, o.tax, o.tip, o.amount as 'Total' "
-                                "from `Order` o left join OrderStatus os on (o.pk_Order = os.fk_Order)"
-                                "left join User u on (o.fk_User = u.pk_User) ORDER BY order_created_at ASC;")
-        ordersRaw=[]
-        for row in cursor:
-            ordersRaw.append(row)
-        cursor.close()
-        return(ordersRaw)
+        excel = xlrd.open_workbook("/Users/chongzhou/Documents/bentonow/dashboard/mysite/dashboard/orders_raw.xlsx").sheet_by_name("orders_raw.csv")
+        weekPivot = []
+        for i in range (1,excel.nrows):
+            temp = datetime.datetime.utcfromtimestamp((excel.cell_value(i,0) - 25569) * 86400.0)
+            temp1 = datetime.datetime.utcfromtimestamp((excel.cell_value(i,1) - 25569) * 86400.0)
+            weekPivot.append([temp,temp1])
+        return(weekPivot)
 
     #orderDetailsRaw data
     def readOrderDetailsRaw(self):

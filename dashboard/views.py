@@ -2,6 +2,8 @@ from django.shortcuts import render
 from django.shortcuts import render_to_response
 from django.http import HttpResponse
 from django.template import RequestContext
+from django.contrib.auth import authenticate
+from django.contrib.auth import login as auth_login
 
 import io
 from xlsxwriter.workbook import Workbook
@@ -13,9 +15,19 @@ from HeatMapGPS import HeatMapGPS
 
 # Create your views here.
 
+def login (request):
+    return render(request, 'index.html', {'title': 'test page'})
+            
 def index(request):
     """docstring for index"""
-    return render(request, 'register.html', {'title': 'test page'})
+    username = request.POST['username']
+    password = request.POST['password']
+    user = authenticate(username=username, password=password)
+    if user is not None:
+        if user.is_active:
+            auth_login(request, user)
+            # Redirect to a success page.
+            return render(request, 'register.html', {'title': 'test page'})
 
 def upload(request):
     if request.method == 'POST':
@@ -40,7 +52,7 @@ def upload(request):
 
 def heatMapGPS(request):
     HeatMapGPS().drawMap()
-    return render(request, 'mymap.html', {'title': 'heat map'})
+    return render(request, 'Monday11.html', {'title': 'heat map'})
     
 def writeExcel(worksheet,dashboard):
     for i in range(0,len(dashboard)):

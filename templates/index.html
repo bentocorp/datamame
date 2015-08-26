@@ -1,17 +1,17 @@
-
-<html>
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>{{ title }}</title>
+</head>
 <body>
-<br><br>
+    <h1>Upload File</h1>
+    <form action="/dashboard/index" method="post" enctype="multipart/form-data" accept-charset="utf-8">
+        {% csrf_token %}
+        Username: <input type="text" name="username" value="" /><br>
+        Password: <input type="text" name="password" value="" /><br>
+        <button>Submit</button>
+    </form> <br>
 
-
-<form>
- 	<form action="report/" method="post">
-<!--   Stripe Excel: <input type="file" name="stripe_excel"><br>
-  Onfleet Excel: <input type="file" name="onfleet_excel"><br> -->
- 		Onfleet Excel: <input type="file" name="onfleet_excel"><br>
-  		<input type="submit" value="report">
-
-
-</form>
 </body>
 </html>

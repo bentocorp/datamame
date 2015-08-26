@@ -89,6 +89,45 @@ class BaseFunction:
         else:
             return 0
 
+    def getDictByDay(self,data,weekPivot,colNum):
+        myDict = {}
+        temp = datetime.datetime(data[0][colNum].year,data[0][colNum].month,data[0][colNum].day)
+        myDict[temp] = [data[0]]
+        for i in range(1,len(data)):
+            temp = datetime.datetime(data[i][colNum].year,data[i][colNum].month,data[i][colNum].day)
+            for j in range(0,len(weekPivot)):
+                last = weekPivot[j][0]
+                if (temp.month == last.month) & (temp.day == last.day) & (temp.year == last.year):
+                    #if no key, create.
+                    if not last in myDict:
+                        myDict[last] = [data[i]]
+                    else:
+                        myDict[last].append(data[i])
+                    break
+        return(myDict)
+
+    def getMain(self,data):
+        main = []
+        for i in range(0,len(data)):
+            if  i%5 == 0:
+                main.append(data[i])
+        return(main)
+    
+    def getSide(self,data):
+        side = []
+        for i in range(0,len(data)):
+            if  i%5 != 0:
+                side.append(data[i])
+        return(side)
+
+    #find 4 of 6 best
+    def getBestSide(self,ID,count):
+        best = []
+        for i in range(0,4):
+            best.append(ID[count.index(max(count))])
+            ID.remove(ID[count.index(max(count))])
+            count.remove(max(count))
+        return(best)
     
             
             

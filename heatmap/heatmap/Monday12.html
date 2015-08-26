@@ -1,0 +1,123 @@
+<html>
+<head>
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+<title>Google Maps - pygmaps </title>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=visualization&sensor=true_or_false"></script>
+<script type="text/javascript">
+	function initialize() {
+		var centerlatlng = new google.maps.LatLng(37.773000, -122.412000);
+		var myOptions = {
+			zoom: 13,
+			center: centerlatlng,
+			mapTypeId: google.maps.MapTypeId.ROADMAP
+		};
+		var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+
+var heatmap_points = [
+new google.maps.LatLng(37.791859, -122.419552),
+new google.maps.LatLng(37.807904, -122.409543),
+new google.maps.LatLng(37.764820, -122.419374),
+new google.maps.LatLng(37.780964, -122.406000),
+new google.maps.LatLng(37.754130, -122.390805),
+new google.maps.LatLng(37.783475, -122.398897),
+new google.maps.LatLng(37.782569, -122.411148),
+new google.maps.LatLng(37.788700, -122.415527),
+new google.maps.LatLng(37.796217, -122.403262),
+new google.maps.LatLng(37.756725, -122.433287),
+new google.maps.LatLng(37.788937, -122.413123),
+new google.maps.LatLng(37.789952, -122.394749),
+new google.maps.LatLng(37.782069, -122.392744),
+new google.maps.LatLng(37.772014, -122.413650),
+new google.maps.LatLng(37.789907, -122.412387),
+new google.maps.LatLng(37.793315, -122.402249),
+new google.maps.LatLng(37.786795, -122.404104),
+new google.maps.LatLng(37.786123, -122.396326),
+new google.maps.LatLng(37.792858, -122.408940),
+new google.maps.LatLng(37.788152, -122.434401),
+new google.maps.LatLng(37.792768, -122.418295),
+new google.maps.LatLng(37.765333, -122.404335),
+new google.maps.LatLng(37.799494, -122.400228),
+new google.maps.LatLng(37.780864, -122.395494),
+new google.maps.LatLng(37.792810, -122.405239),
+new google.maps.LatLng(37.767792, -122.404156),
+new google.maps.LatLng(37.788700, -122.415527),
+new google.maps.LatLng(37.770660, -122.414401),
+new google.maps.LatLng(37.754773, -122.416534),
+new google.maps.LatLng(37.764733, -122.394579),
+new google.maps.LatLng(37.769474, -122.402634),
+new google.maps.LatLng(37.788796, -122.409710),
+new google.maps.LatLng(37.782247, -122.398912),
+new google.maps.LatLng(37.792062, -122.403697),
+new google.maps.LatLng(37.775037, -122.410441),
+new google.maps.LatLng(37.750304, -122.442367),
+new google.maps.LatLng(37.789737, -122.420787),
+new google.maps.LatLng(37.764820, -122.419374),
+new google.maps.LatLng(37.787795, -122.402906),
+new google.maps.LatLng(37.778790, -122.395540),
+new google.maps.LatLng(37.782247, -122.398912),
+new google.maps.LatLng(37.778790, -122.395540),
+new google.maps.LatLng(37.782569, -122.411148),
+new google.maps.LatLng(37.800204, -122.431368),
+new google.maps.LatLng(37.801646, -122.409583),
+];
+
+var pointArray = new google.maps.MVCArray(heatmap_points);
+var heatmap;
+heatmap = new google.maps.visualization.HeatmapLayer({
+
+data: pointArray
+});
+heatmap.setMap(map);
+heatmap.set('threshold', 10);
+heatmap.set('radius', 25);
+heatmap.set('opacity', 0.800000);
+heatmap.set('dissipating', true);
+	}
+</script>
+</head>
+<body style="margin:0px; padding:0px;" onload="initialize()">
+	<a href="Monday11.html">Monday 11-12</a>
+    <a href="Monday12.html">Monday 12-1</a>
+    <a href="Monday13.html">Monday 1-2</a>
+    <a href="Monday17.html">Monday 5-6</a>
+    <a href="Monday18.html">Monday 6-7</a>
+    <a href="Monday19.html">Monday 7-8</a>
+    <a href="Monday20.html">Monday 8-9</a>
+    <a href="Monday21.html">Monday 9-10</a> <br>
+	<a href="Tuesday11.html">Tuesday 11-12</a>  
+    <a href="Tuesday12.html">Tuesday 12-1</a>
+    <a href="Tuesday13.html">Tuesday 1-2</a>
+    <a href="Tuesday17.html">Tuesday 5-6</a>
+    <a href="Tuesday18.html">Tuesday 6-7</a>
+    <a href="Tuesday19.html">Tuesday 7-8</a>
+    <a href="Tuesday20.html">Tuesday 8-9</a>
+    <a href="Tuesday21.html">Tuesday 9-10</a> <br>
+    <a href="Wednesday11.html">Wednesday 11-12</a>  
+    <a href="Wednesday12.html">Wednesday 12-1</a>
+    <a href="Wednesday13.html">Wednesday 1-2</a>
+    <a href="Wednesday17.html">Wednesday 5-6</a>
+    <a href="Wednesday18.html">Wednesday 6-7</a>
+    <a href="Wednesday19.html">Wednesday 7-8</a>
+    <a href="Wednesday20.html">Wednesday 8-9</a>
+    <a href="Wednesday21.html">Wednesday 9-10</a> <br>
+    <a href="Thursday11.html">Thursday 11-12</a>  
+    <a href="Thursday12.html">Thursday 12-1</a>
+    <a href="Thursday13.html">Thursday 1-2</a>
+    <a href="Thursday17.html">Thursday 5-6</a>
+    <a href="Thursday18.html">Thursday 6-7</a>
+    <a href="Thursday19.html">Thursday 7-8</a>
+    <a href="Thursday20.html">Thursday 8-9</a>
+    <a href="Thursday21.html">Thursday 9-10</a> <br>
+    <a href="Friday11.html">Friday 11-12</a>  
+    <a href="Friday12.html">Friday 12-1</a>
+    <a href="Friday13.html">Friday 1-2</a>
+    <a href="Friday17.html">Friday 5-6</a>
+    <a href="Friday18.html">Friday 6-7</a>
+    <a href="Friday19.html">Friday 7-8</a>
+    <a href="Friday20.html">Friday 8-9</a>
+    <a href="Friday21.html">Friday 9-10</a>
+    <hr>
+	<div id="map_canvas" style="width: 100%; height: 100%;"></div>
+</body>
+</html>

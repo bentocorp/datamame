@@ -1,0 +1,83 @@
+<html>
+<head>
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+<title>Google Maps - pygmaps </title>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=visualization&sensor=true_or_false"></script>
+<script type="text/javascript">
+	function initialize() {
+		var centerlatlng = new google.maps.LatLng(37.773000, -122.412000);
+		var myOptions = {
+			zoom: 13,
+			center: centerlatlng,
+			mapTypeId: google.maps.MapTypeId.ROADMAP
+		};
+		var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+
+var heatmap_points = [
+];
+
+var pointArray = new google.maps.MVCArray(heatmap_points);
+var heatmap;
+heatmap = new google.maps.visualization.HeatmapLayer({
+
+data: pointArray
+});
+heatmap.setMap(map);
+heatmap.set('threshold', 10);
+heatmap.set('radius', 25);
+heatmap.set('opacity', 0.800000);
+heatmap.set('dissipating', true);
+	}
+</script>
+</head>
+<body style="margin:0px; padding:0px;" onload="initialize()">   
+	<a href="heatmap/Monday11.html">Monday 11-12</a>
+    <a href="heatmap/Monday12.html">Monday 12-1</a>
+    <a href="heatmap/Monday13.html">Monday 1-2</a>
+    <a href="heatmap/Monday17.html">Monday 5-6</a>
+    <a href="heatmap/Monday18.html">Monday 6-7</a>
+    <a href="heatmap/Monday19.html">Monday 7-8</a>
+    <a href="heatmap/Monday20.html">Monday 8-9</a>
+    <a href="heatmap/Monday21.html">Monday 9-10</a> <br>
+	<a href="heatmap/Tuesday11.html">Tuesday 11-12</a>  
+    <a href="heatmap/Tuesday12.html">Tuesday 12-1</a>
+    <a href="heatmap/Tuesday13.html">Tuesday 1-2</a>
+    <a href="heatmap/Tuesday17.html">Tuesday 5-6</a>
+    <a href="heatmap/Tuesday18.html">Tuesday 6-7</a>
+    <a href="heatmap/Tuesday19.html">Tuesday 7-8</a>
+    <a href="heatmap/Tuesday20.html">Tuesday 8-9</a>
+    <a href="heatmap/Tuesday21.html">Tuesday 9-10</a> <br>
+    <a href="heatmap/Wednesday11.html">Wednesday 11-12</a>  
+    <a href="heatmap/Wednesday12.html">Wednesday 12-1</a>
+    <a href="heatmap/Wednesday13.html">Wednesday 1-2</a>
+    <a href="heatmap/Wednesday17.html">Wednesday 5-6</a>
+    <a href="heatmap/Wednesday18.html">Wednesday 6-7</a>
+    <a href="heatmap/Wednesday19.html">Wednesday 7-8</a>
+    <a href="heatmap/Wednesday20.html">Wednesday 8-9</a>
+    <a href="heatmap/Wednesday21.html">Wednesday 9-10</a> <br>
+    <a href="heatmap/Thursday11.html">Thursday 11-12</a>  
+    <a href="heatmap/Thursday12.html">Thursday 12-1</a>
+    <a href="heatmap/Thursday13.html">Thursday 1-2</a>
+    <a href="heatmap/Thursday17.html">Thursday 5-6</a>
+    <a href="heatmap/Thursday18.html">Thursday 6-7</a>
+    <a href="heatmap/Thursday19.html">Thursday 7-8</a>
+    <a href="heatmap/Thursday20.html">Thursday 8-9</a>
+    <a href="heatmap/Thursday21.html">Thursday 9-10</a> <br>
+    <a href="heatmap/Friday11.html">Friday 11-12</a>  
+    <a href="heatmap/Friday12.html">Friday 12-1</a>
+    <a href="heatmap/Friday13.html">Friday 1-2</a>
+    <a href="heatmap/Friday17.html">Friday 5-6</a>
+    <a href="heatmap/Friday18.html">Friday 6-7</a>
+    <a href="heatmap/Friday19.html">Friday 7-8</a>
+    <a href="heatmap/Friday20.html">Friday 8-9</a>
+    <a href="heatmap/Friday21.html">Friday 9-10</a>
+    <hr>
+    <div id="map_canvas" style="width: 100%; height: 100%;"></div>
+</body>
+</html>
+
+
+
+
+
